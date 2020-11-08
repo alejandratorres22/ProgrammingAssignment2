@@ -1,4 +1,5 @@
 #edited file
+#get the function
 makeCacheMatrix <- function(x = numeric()) {
   m <- NULL
   set <- function(y) {
@@ -6,6 +7,7 @@ makeCacheMatrix <- function(x = numeric()) {
     m <<- NULL
   }
   get <- function() x
+  #solve gives the inverse of the matrix
   setsolve <- function(solve) m <<- solve
   getsolve <- function() m
   list(set = set, get = get,
@@ -13,6 +15,7 @@ makeCacheMatrix <- function(x = numeric()) {
        getsolve = getsolve)
 }
 
+#second part of the function to get the inverse
 cacheSolve <- function(x, ...) {
   m <- x$getsolve()
   if(!is.null(m)) {
